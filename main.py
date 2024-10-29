@@ -53,7 +53,7 @@ def serve_html():
             players = roster.get("players", [])
             extracted_data[owner_id] = players
         print("extracted data: ", extracted_data)
-        return render_template('home.html', rosters=extracted_data)
+        return render_template('index.html', rosters=extracted_data)
     except requests.RequestException as e:
         return f"An error occurred: {e}", 500
 

@@ -80,7 +80,7 @@ def serve_other_files(filename):
     user_id = users[filename]
     split = filename.split('.')
     print(split[0], " : ", extracted_data[user_id])
-    with open("templates/" + filename, 'r', encoding='utf-8') as file:
+    with open(filename, 'r', encoding='utf-8') as file:
         soup = BeautifulSoup(file, 'html.parser')
         tbody_element = soup.find(('tbody'))
 
@@ -181,7 +181,7 @@ def serve_other_files(filename):
                 new_ul.append(BeautifulSoup(person, 'html.parser'))
             soup.body.append(new_ul)
 
-    with open("templates/" + filename, "w", encoding="utf-8") as file:
+    with open(+ filename, "w", encoding="utf-8") as file:
         file.write(soup.prettify())
 
     return render_template(filename)

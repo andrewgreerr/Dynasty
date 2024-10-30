@@ -69,11 +69,11 @@ def raw():
 #            print(entry["players"])
 #            return render_template('brian.html')
 
-@app.route('/run-function', methods=['GET'])
-def run_function():
-    fetch_rosters()
-    fetch_users()
-    return jsonify({"message": "Python function executed successfully."})
+#@app.route('/run-function', methods=['GET'])
+#def run_function():
+#    fetch_rosters()
+#    fetch_users()
+#    return jsonify({"message": "Python function executed successfully."})
 
 @app.route('/<filename>')
 def serve_other_files(filename):
